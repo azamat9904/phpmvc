@@ -13,7 +13,7 @@
             }
             
             require_once '../app/controllers/' . $this->currentController . '.php';
-            $this->currentController = new $this->currentController;
+            $this->currentController = new $this->currentController();
 
             if(isset($url[1])){
                 if(method_exists($this->currentController, $url[1])){
