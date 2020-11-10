@@ -9,24 +9,24 @@
                         <label for="email">Email:<sub>*</sub></label>
                         <input 
                             type="email" 
-                            class="form-control form-control-lg
+                            class="form-control 
                             <?php !empty($data['email_err']) ? 'is-invalid' : '' ?>" 
                             name="email"
                             value="<?= $data['email'] ?>"
                              />
-                             <span class="invalid-feedback"><?= $data['email_err']; ?></span>
+                             <span class="invalid-feedback d-block"><?= $data['email_err']; ?></span>
                     </div>
 
                     <div class="form-group">
                         <label for="password">Password:<sub>*</sub></label>
                         <input 
                             type="password" 
-                            class="form-control form-control-lg 
+                            class="form-control
                             <?php !empty($data['password_err']) ? 'is-invalid' : '' ?>" 
                             name="password"
                             value="<?= $data['password'] ?>"
                              />
-                             <span class="invalid-feedback"><?= $data['password_err']; ?></span>
+                             <span class="invalid-feedback d-block"><?= $data['password_err']; ?></span>
                     </div>
                     <div class="row mb-2">
                         <div class="col">
