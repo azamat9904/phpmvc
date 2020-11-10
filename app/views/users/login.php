@@ -2,20 +2,9 @@
    <div class="row">
         <div class="col-md-6 mx-auto">
             <div class="card card-body bg-light mt-5">
-                <h2>Create an account</h2>
-                <p>Please fill out this form to register with us</p>
-                <form action="<?= URLROOT; ?>/users/register" method="POST">
-                    <div class="form-group">
-                        <label for="name">Name:<sub>*</sub></label>
-                        <input 
-                            type="text" 
-                            class="form-control form-control-lg
-                            <?php !empty($data['name_err']) ? 'is-invalid' : '' ?>" 
-                            name="name"
-                            value="<?= $data['name'] ?>"
-                             />
-                             <span class="invalid-feedback"><?= $data['name_err']; ?></span>
-                    </div>
+                <h2>Login</h2>
+                <p>Please fill your credentials to log in</p>
+                <form action="<?= URLROOT; ?>/users/login" method="POST">  
                     <div class="form-group">
                         <label for="email">Email:<sub>*</sub></label>
                         <input 
@@ -27,6 +16,7 @@
                              />
                              <span class="invalid-feedback"><?= $data['email_err']; ?></span>
                     </div>
+
                     <div class="form-group">
                         <label for="password">Password:<sub>*</sub></label>
                         <input 
@@ -38,25 +28,14 @@
                              />
                              <span class="invalid-feedback"><?= $data['password_err']; ?></span>
                     </div>
-                    <div class="form-group">
-                        <label for="confirm_password">Confirm password:<sub>*</sub></label>
-                        <input 
-                            type="password" 
-                            class="form-control form-control-lg
-                            <?php !empty($data['confirm_password_err']) ? 'is-invalid' : '' ?>" 
-                            name="confirm_password"
-                            value="<?= $data['confirm_password'] ?>"
-                             />
-                             <span class="invalid-feedback"><?= $data['confirm_password_err']; ?></span>
-                    </div>
                     <div class="row mb-2">
                         <div class="col">
-                            <button type="submit" class="btn btn-success btn-block">Register</button>
+                            <button type="submit" class="btn btn-success btn-block">Login</button>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col">
-                            <a href="<?= URLROOT; ?>/users/login" class="btn btn-light btn-block">Hava an account? Login</a>
+                            <a href="<?= URLROOT; ?>/users/register" class="btn btn-light btn-block">You are new? Register</a>
                         </div>
                     </div>
                 </form>
