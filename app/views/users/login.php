@@ -9,8 +9,7 @@
                         <label for="email">Email:<sub>*</sub></label>
                         <input 
                             type="email" 
-                            class="form-control 
-                            <?php !empty($data['email_err']) ? 'is-invalid' : '' ?>" 
+                            class="form-control <?= !empty($data['email_err']) ? 'is-invalid' : '' ?>" 
                             name="email"
                             value="<?= $data['email'] ?>"
                              />
@@ -22,7 +21,7 @@
                         <input 
                             type="password" 
                             class="form-control
-                            <?php !empty($data['password_err']) ? 'is-invalid' : '' ?>" 
+                            <?= !empty($data['password_err']) ? 'is-invalid' : '' ?>" 
                             name="password"
                             value="<?= $data['password'] ?>"
                              />

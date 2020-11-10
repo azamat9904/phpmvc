@@ -10,7 +10,7 @@
                         <input 
                             type="text" 
                             class="form-control 
-                            <?php !empty($data['name_err']) ? 'is-invalid' : '' ?>" 
+                            <?= !empty($data['name_err']) ? 'is-invalid' : '' ?>" 
                             name="name"
                             value="<?= $data['name'] ?>"
                              />
@@ -21,7 +21,7 @@
                         <input 
                             type="email" 
                             class="form-control
-                            <?php !empty($data['email_err']) ? 'is-invalid' : '' ?>" 
+                            <?= !empty($data['email_err']) ? 'is-invalid' : '' ?>" 
                             name="email"
                             value="<?= $data['email'] ?>"
                              />
@@ -32,7 +32,7 @@
                         <input 
                             type="password" 
                             class="form-control
-                            <?php !empty($data['password_err']) ? 'is-invalid' : '' ?>" 
+                            <?= !empty($data['password_err']) ? 'is-invalid' : '' ?>" 
                             name="password"
                             value="<?= $data['password'] ?>"
                              />
@@ -43,7 +43,7 @@
                         <input 
                             type="password" 
                             class="form-control
-                            <?php !empty($data['confirm_password_err']) ? 'is-invalid' : '' ?>" 
+                            <?= !empty($data['confirm_password_err']) ? 'is-invalid' : '' ?>" 
                             name="confirm_password"
                             value="<?= $data['confirm_password'] ?>"
                              />
