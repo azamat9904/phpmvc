@@ -1,6 +1,7 @@
 <?php
     class Users extends Controller{
         public function __construct(){
+            $this->userModel = $this->model('User');
 
         }   
 
@@ -22,8 +23,10 @@
 
                 if(empty($data['email'])){
                     $data['email_err'] = 'Please enter email';
+                }else if(!$this->userModel->isUserExist($data['email'])){
+                    $data['email_err'] = 'Email is already taken';
                 }
-
+                
                 if(empty($data['name'])){
                     $data['name_err'] = 'Please enter name';
                 }
