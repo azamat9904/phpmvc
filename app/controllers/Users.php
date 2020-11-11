@@ -96,7 +96,7 @@
                     $loggedInUser = $this->userModel->login($data['email'], $data['password']);
                     if($loggedInUser){
                         $this->createUserSession($loggedInUser);
-                        redirect('pages/index');
+                        redirect('posts');
                         return;
                     }
                     $data['password_err'] = "Password incorrect";
@@ -132,10 +132,4 @@
             redirect('users/login');
         }
 
-        public function isLoggedIn(){
-            if(isset($_SESSION['user_id'])){
-              return true;
-            }
-            return false;
-        }
     }
