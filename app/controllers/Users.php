@@ -85,6 +85,8 @@
 
                 if(empty($data['email'])){
                     $data['email_err'] = 'Please enter email';
+                }else if(!$this->userModel->isUserExist($data['email'])){
+                    $data['email_err'] = 'No such user';
                 }
 
                 if(empty($data['password'])){
@@ -92,7 +94,13 @@
                 }
 
                 if(empty($data['email_err']) && empty($data['password_err'])){
-                    die('SUccess');
+                    $isUserLoggedIn = $this->userModel->login($data['email'], $data['password']);
+                    if($isUserLoggedIn){
+                        die('Success');
+                        return;
+                    }
+                    $data['password_err'] = "Password incorrect";
+                    $this->view('users/login', $data);
                     return;
                 }
                 

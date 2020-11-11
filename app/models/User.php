@@ -30,4 +30,16 @@
             return false;
         }
 
+        public function login($email, $password){
+            $this->db->query('SELECT * FROM users WHERE email = :email');
+            $this->db->bind('email', $email);
+            $user = $this->db->single();
+
+            if(password_verify($password, $user->password)){
+                return $user;
+            }
+
+            return false;
+        }
+
     }   
